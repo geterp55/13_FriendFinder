@@ -13,7 +13,7 @@ var path = require("path");
 
 
 var app = express();   					// Tells node that we are creating an "express" server
-var PORT = process.env.PORT || 3000;	// Sets an initial port. We'll use this later in our listener
+var PORT = process.env.PORT || 8000;	// Sets an initial port. We'll use this later in our listener
 
 
 
@@ -30,9 +30,40 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs. 
 // ================================================================================
 
-require('./app/routing/html-routes.js')(app);
-require('./app/routing/api-routes.js')(app);
 
+
+
+	// app.get('/', function(req, res){
+	// res.sendFile(path.join(__dirname, 'home.html'));
+	// })
+
+	var homeLink = require('./app/routing/html-routes.js')(app);
+	var surveyLink = require('./app/routing/api-routes.js')(app);
+
+// module.exports = function(app) {
+
+	
+
+	app.get('/', function(req, res){
+		res.sendFile(path.join(__dirname + homeLink));
+	});
+
+
+	app.get('/survey', function(req, res){
+		res.sendFile(path.join(__dirname + surveyLink));
+	});
+
+
+	
+	app.use(bodyParser.urlencoded({ extended: true }));
+
+	app.post('/', function(req, res) {
+	  res.json(req.body); // req.body is your form data
+	});
+
+
+
+// }
 
 
 

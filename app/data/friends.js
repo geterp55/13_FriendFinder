@@ -8,8 +8,8 @@
 
 var tableArray = [
 	{
-		friendName: "",
-		friendPhotoLink: "",
+		friendName: [],
+		friendPhotoLink: [],
 		
 
 	}

@@ -23,9 +23,8 @@ module.exports = function(app){
 	app.get('/api/friends', function(req, res){
 		console.log(req.body('friendArray.friendName'));
 		var friendName = req.body('friendArray.friendName');
-		var friendEmail = req.body('friendArray.friendEmail');
-		// var friendID = req.body('friendID');
-		// var phoneNumber = req.body('phoneNumber');
+		// var friendEmail = req.body('friendArray.friendEmail');
+		
 
 		res.json(friendName + friendEmail);
 		// res.json(friendName + friendEmail + friendID + phoneNumber);	
@@ -33,15 +32,18 @@ module.exports = function(app){
 		});
 
 	app.post('/api/friends', function(req, res){
-		var friendName = req.body.friendArray.friendName;
-		var friendEmail = req.body.friendArray.friendEmail;
+		friendArray.push(req.body);
+		res.json(true);
+
+		// var friendName = req.body.friendArray.friendName;
+		// var friendEmail = req.body.friendArray.friendEmail;
 		// var friendID = req.body.friendID;
 		// var phoneNumber = req.body.phoneNumber;
 
-		res.json(friendName + friendEmail);
-		res.json(friendName + friendEmail + friendID + phoneNumber);
+		// res.json(friendName + friendEmail);
+		// res.json(friendName + friendEmail + friendID + phoneNumber);
 
-	})
+	});
 
 
 

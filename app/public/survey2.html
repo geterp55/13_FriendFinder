@@ -69,7 +69,7 @@
 		      </div>
 		      <div class="modal-body">
 		        <h2 id="matchName"></h2>
-		        <img id="matchImg" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+		        <img id="matchImg" src="http://www.motherteresa.org/RELICS_files/MTfull.jpg" alt="">
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -82,16 +82,16 @@
 	  <script type="text/javascript">
 
 	  	// Chosen CSS
-	    var config = {
-	      '.chosen-select'           : {},
-	      '.chosen-select-deselect'  : {allow_single_deselect:true},
-	      '.chosen-select-no-single' : {disable_search_threshold:10},
-	      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-	      '.chosen-select-width'     : {width:"95%"}
-	    }
-	    for (var selector in config) {
-	      $(selector).chosen(config[selector]);
-	    }
+						    // var config = {
+						    //   '.chosen-select'           : {},
+						    //   '.chosen-select-deselect'  : {allow_single_deselect:true},
+						    //   '.chosen-select-no-single' : {disable_search_threshold:10},
+						    //   '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+						    //   '.chosen-select-width'     : {width:"95%"}
+						    // }
+						    // for (var selector in config) {
+						    //   $(selector).chosen(config[selector]);
+						    // }
 
 	    // Capture the form inputs 
 	    $("#submit").on("click", function(){
@@ -119,7 +119,6 @@
 		    	var userData = {
 		    		name: $("#name").val(),
 		    		photo: $("#photo").val(),
-		    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
 		    	}
 
 
